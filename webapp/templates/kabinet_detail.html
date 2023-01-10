@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3>Кабинет {{ kab.number }}</h3>
+<p>{{ kab.get_subject_display }}</p>
+<p>{{ kab.ave_rating }}</p>
+
+{% for i in coments %}
+<div class="coment">{{ i.user }}</div>
+<p>{{ i.coment }}</p>
+{% endfor %}
+
+{% endblock %}
