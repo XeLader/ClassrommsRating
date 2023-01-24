@@ -41,11 +41,12 @@ color: black;
 .header a.active {
 background-color: green;
 color: white;
+margin-left: 5px;
 }
 .header-right {
 float: right;
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 590px) {
 .header a {
 float: none;
 display: block;
@@ -83,3 +84,21 @@ border-radius: 5px;
   margin: auto;
   margin-top: 200px;
   box-shadow: 0px 15px 125px -5px #000;}
+
+.kablist {
+  margin: 5px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 200px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.kab{
+  padding: 10px;
+  text-align: center;
+}
+
+.kablist img {
+  width: 100%;
+  height: auto;
+}

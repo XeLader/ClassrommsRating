@@ -1,11 +1,26 @@
 {% extends "base.html" %}
-
+{% load static %}
 {% block title %}Home{% endblock %}
 
 {% block content %}
 
 {% for i in kab %}
-<h3><a href='{% url 'kab_detail' pk=i.pk %}'>Кабинет {{ i.number }}</a></h3>
-<p>{{ i.get_subject_display }}</p>
+<div class="kablist">
+    {% if i.subject == 'math' %}
+        <img src="{% static 'image/kab_math.jpg' %}" alt="Math" width="900" height="900">
+    {% elif i.subject == 'russ' %}
+        <img src="{% static 'image/kab_rus.jpg' %}" alt="Rus" width="900" height="900">
+    {% elif i.subject == 'phys' %}
+        <img src="{% static 'image/kab_phys.jpg' %}" alt="Phys" width="900" height="900">
+    {% elif i.subject == 'it' %}
+        <img src="{% static 'image/kab_it.jpg' %}" alt="IT" width="900" height="900">
+    {% else %}
+        <img src="{% static 'image/kab_null.jpg' %}" alt="Null" width="900" height="900">
+    {% endif %}
+    <div class="kab">
+        <h3><a href='{% url 'kab_detail' pk=i.pk %}'>Кабинет {{ i.number }}</a></h3>
+        <p>{{ i.get_subject_display }}</p>
+    </div>
+</div>
 {% endfor %}
 {% endblock %}
