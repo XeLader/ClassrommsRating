@@ -1,10 +1,13 @@
 {% extends 'base.html' %}
 
 {% block content %}
- <h2>Добавьте новый отзыв к кабинету</h2>
-<form method = "POST" class = "Comm">
-  {% csrf_token %}
-  {{ form.as_p }}
- <button type = "submit"> Save </button>
-</form>
+<div class="new_comm">
+     <h2>Добавьте новый отзыв к кабинету</h2>
+    <form method = "POST" class = "Comm">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type = "submit"> Save </button>
+    </form>
+</div>
+
 {% endblock %}

@@ -55,10 +55,19 @@ text-align: left;
 .header-right {
 float: none;
 }}
+
+body{
+display: flex;
+flex-direction: column;
+min-height: 100vh;
+}
+
+main{
+flex-grow: 1;
+}
+
 .footer{
-position: absolute;
 left: 0;
-bottom: 0;
 width: 100%;
 height: 40px;
 background-color: #f8b00f;
@@ -85,6 +94,16 @@ border-radius: 5px;
   margin-top: 200px;
   box-shadow: 0px 15px 125px -5px #000;}
 
+.signup{
+  padding: 50px;
+  font-family: 'Roboto', sans-serif;
+  background-color: #F5F5F5;
+  height: 650px;
+  width: 520px;
+  margin: auto;
+  margin-top: 50px;
+  box-shadow: 0px 15px 125px -5px #000;}
+
 .kablist {
   margin: 5px;
   border: 1px solid #ccc;
@@ -101,4 +120,67 @@ border-radius: 5px;
 .kablist img {
   width: 100%;
   height: auto;
+}
+
+.cab_detail{
+    display: grid;
+    grid-template-columns: 300px auto;
+    grid-template-rows: 270px;
+    column-gap: 5px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 50%;
+    padding: 20px;
+    height: 300px;
+    border: 1px solid #ccc;
+}
+.cabdetailimage {
+        float: left;
+        height: 100%;
+        width: auto;
+    }
+
+.cabdetailtext {
+        display: inline;
+    }
+
+.cabdetailtext h3{
+    font-weight: bold;
+    font-size: 64px;
+}
+.cabdetailtext p{
+    font-size: 21px;
+}
+
+.comment_list {
+    margin: auto;
+    width: 50%;
+}
+
+.comment{
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #ccc;
+  float: left;
+  width: 90%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.comm_author{
+    font-size: 21px;
+    font-weight: bold;
+}
+
+.new_comm{
+    margin: auto;
+    margin-top: 20px;
+    width: 50%;
+    padding: 10px;
+
+}
+
+.new_comm h2{
+    font-size: 38px;
+    font-weight: bold;
 }

@@ -1,13 +1,37 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h3>Кабинет {{ kab.number }}</h3>
-<p>{{ kab.get_subject_display }}</p>
-<p>{{ kab.ave_rating }}</p>
+<div class="cab_detail">
+    <div>
+        {% if kab.subject == 'math' %}
+        <img class="cabdetailimage" src="{% static 'image/kab_math.jpg' %}" alt="Math" width="900" height="900">
+    {% elif kab.subject == 'russ' %}
+        <img class="cabdetailimage" src="{% static 'image/kab_rus.jpg' %}" alt="Rus" width="900" height="900">
+    {% elif kab.subject == 'phys' %}
+        <img class="cabdetailimage" src="{% static 'image/kab_phys.jpg' %}" alt="Phys" width="900" height="900">
+    {% elif kab.subject == 'it' %}
+        <img class="cabdetailimage" src="{% static 'image/kab_it.jpg' %}" alt="IT" width="900" height="900">
+    {% else %}
+        <img class="cabdetailimage" src="{% static 'image/kab_null.jpg' %}" alt="Null" width="900" height="900">
+    {% endif %}
+    </div>
+    <div class="cabdetailtext">
+        <h3>Кабинет {{ kab.number }}</h3>
+        <p><b>Предмет: </b> {{ kab.get_subject_display }}<br><b>Рейтинг: </b> {{ kab.ave_rating }}</p>
+    </div>
+</div>
 
-{% for i in coments %}
-<div class="coment">{{ i.user }}</div>
-<p>{{ i.coment }}</p>
-{% endfor %}
+<div class="comment_list">
+    <h3>Комментарии:</h3>
+    {% for i in coments %}
+        <div class = "comment">
+            <div class="comm_author">{{ i.user }}</div>
+            <div class="comm_text">{{ i.coment }}</div>
+        </div>
+    {% endfor %}
+
+</div>
+
 
 {% endblock %}
